@@ -20,7 +20,9 @@ ggplot(data=data, aes(x=DateDB, y=Price)) +
   geom_smooth(method = "lm", se = FALSE, color = "red") +
   labs(title = "Puntos de precio de produccion de hardware en estados unidos frente a el paso del tiempo",
        x = "Fecha",
-       y = "Indice de precios de produccion")
+       y = "Indice de precios de produccion") +
+  theme_light()
+  
 
 # Para usar cor.tests
 DateDB_numeric <- as.numeric(DateDB)
@@ -32,35 +34,25 @@ model <- lm(Price ~ DateDB, data = DB)
 summary(model)
 
 
-# modelo de prediccion 
-datosNuevos <- data.frame(DateDB = as.Date("2029-01-01"))
-datosNuevos
-predict(model, datosNuevos)
+# Modelo de prediccion 
+
+datosPredecidosEnero2024 <- data.frame(DateDB = as.Date("2024-01-01"))
+
+datosPredecidosEnero2025 <- data.frame(DateDB = as.Date("2025-01-01"))
+
+datosPredecidosEnero2026 <- data.frame(DateDB = as.Date("2026-01-01"))
+
+pricePredict2024 <- predict(model, datosPredecidosEnero2024)
+
+pricePredict2025 <- predict(model, datosPredecidosEnero2025)
+
+peicePredict2026 <- predict(model, datosPredecidosEnero2026)
 
 
 rm(list=ls())
 
-
-# Crea un nuevo marco de datos con las fechas futuras para las que quieres hacer predicciones
+# Crea un nuevo marco de datos con las fechas futuras
 future_DateDBs <- seq(from = as.Date("2024-01-01"), by = "month", length.out = 24)
-future_DateDBs
-
-# Usa tu modelo para hacer predicciones para estas fechas futuras
-predict(model,future_DateDBs)
-
-predictions
-# Añade estas predicciones a tu marco de datos original
-data_future <- rbind(data, future_data)
-data_future$Predicted_Price <- c(rep(NA, nrow(data)), predictions)
-
-# Haz un gráfico de regresión lineal con los datos originales y las predicciones
-ggplot(data=data_future, aes(x=DateDB)) +
-  geom_point(aes(y=Price), size = 0.1) + 
-  geom_line(aes(y=Predicted_Price), color = "red") +
-  labs(title = "Puntos de precio de produccion de hardware en estados unidos frente a el paso del tiempo",
-       x = "Fecha",
-       y = "Indice de precios de produccion")
-
 
 
 
