@@ -1,8 +1,11 @@
 # Importo la libreria ggplot2
 library(ggplot2)
 
+file.choose()
+
 # Asignacion de los datos en una variable, TRUE por que la primer linea son los titulos y "," porque se separan por ,
-DB <- read.csv("/home/dyz/itec/matematica/PCU332510332510.csv", TRUE, ",")
+#DB <- read.csv("/home/valen/itec/matematica/Data_Analysis_With_R/PCU332510332510.csv", TRUE, ",")
+DB <- read.csv("/home/valen/itec/matematica/Data_Analysis_With_R/copia2010.csv", TRUE, ",")
 
 # Ejemplo de como se ve la informacion en el csv
 head(DB)
@@ -18,9 +21,11 @@ data <- data.frame(Price,DateDB)
 ggplot(data=data, aes(x=DateDB, y=Price)) +
   geom_point(size = 0.1) + 
   geom_smooth(method = "lm", se = FALSE, color = "red") +
+#  scale_x_continuous(limits = c(1980, 2030), breaks = seq(1980, 2030, by = 5)) +
+#  scale_y_continuous(limits = c(0, 200), breaks = seq(0, 200, by = 25)) +
   labs(title = "Puntos de precio de produccion de hardware en estados unidos frente a el paso del tiempo",
-       x = "Fecha",
-       y = "Indice de precios de produccion") +
+     x = "Fecha",
+     y = "Indice de precios de produccion") +
   theme_light()
   
 
@@ -35,24 +40,50 @@ summary(model)
 
 
 # Modelo de prediccion 
+datosPredecidos1 <- data.frame(DateDB = as.Date("2012-03-01"))
+datosPredecidos2 <- data.frame(DateDB = as.Date("2012-06-01"))
+datosPredecidos3 <- data.frame(DateDB = as.Date("2013-01-01"))
 
-datosPredecidosEnero2024 <- data.frame(DateDB = as.Date("2024-01-01"))
+pricePredict1 <- predict(model, datosPredecidos1)
+pricePredict2 <- predict(model, datosPredecidos2)
+pricePredict3 <- predict(model, datosPredecidos3)
 
-datosPredecidosEnero2025 <- data.frame(DateDB = as.Date("2025-01-01"))
+prueba1 <- data.frame(Price = pricePredict1, DateDB = as.Date("2012-03-01"))
+prueba2 <- data.frame(Price = pricePredict2, DateDB = as.Date("2012-06-01"))
+prueba3 <- data.frame(Price = pricePredict3, DateDB = as.Date("2013-01-01"))
 
-datosPredecidosEnero2026 <- data.frame(DateDB = as.Date("2026-01-01"))
+dataP <- rbind(data, prueba1, prueba2, prueba3)
+dataP
 
-pricePredict2024 <- predict(model, datosPredecidosEnero2024)
+predice:
+1100 167.6459 2012-03-01
+1101 168.3508 2012-06-01
+1102 169.9906 2013-01-01
 
-pricePredict2025 <- predict(model, datosPredecidosEnero2025)
+es:
+2012-03-01,177.2
+2012-06-01,178.3
+2013-01-01,177.8
 
-peicePredict2026 <- predict(model, datosPredecidosEnero2026)
+
+
+ggplot(data=dataP, aes(x=DateDB, y=Price)) +
+  geom_point(size = 0.1) + 
+  geom_smooth(method = "lm", se = FALSE, color = "red") +
+  #  scale_x_continuous(limits = c(1980, 2030), breaks = seq(1980, 2030, by = 5)) +
+  #  scale_y_continuous(limits = c(0, 200), breaks = seq(0, 200, by = 25)) +
+  labs(title = "prediccion",
+       x = "Fecha",
+       y = "Indice de precios de produccion") +
+  theme_light()
+
+
 
 
 rm(list=ls())
 
 # Crea un nuevo marco de datos con las fechas futuras
-future_DateDBs <- seq(from = as.Date("2024-01-01"), by = "month", length.out = 24)
+# future_DateDBs <- seq(from = as.Date("2024-01-01"), by = "month", length.out = 24)
 
 
 
