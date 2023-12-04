@@ -7,7 +7,7 @@ virtuales de Argentina. <br>
 El objetivo de este análisis es analizar el comportamiento de los precios
 de un mismo producto en distintas tiendas de hardware argentinas y
 lograr hacer una predicción de a dónde se dirige el mercado tecnológico
-a nivel nacional.
+a nivel nacional.<br>
 Para realizar este análisis se utilizó un servicio conocido como web
 scraper, que permite extraer información de páginas web de forma
 automática. Este servicio propio programado exclusivamente para su
@@ -17,7 +17,7 @@ páginas web indicadas, además de recuperar un historial diario, por
 cada tienda individualmente, de la fluctuación del precio de su producto,
 y guardarlos en una base de datos para después, aplicar técnicas
 estadísticas además de gráficos para analizar y visualizar los datos
-obtenidos.
+obtenidos.<br>
 Los resultados del análisis demuestran que hay una volatilidad
 importante en los precios de los componentes tecnológicos en general
 incluso haciendo el análisis sobre otra moneda diferente al peso
@@ -51,7 +51,7 @@ Un web scraper es una herramienta que extrae información de páginas
 web de forma automática. Con un web scraper se puede obtener
 información valiosa para hacer análisis, investigaciones o comparaciones.
 Es una herramienta muy útil para obtener datos de fuentes públicas que no
-ofrecen una forma fácil de descargarlos o consultarlos.
+ofrecen una forma fácil de descargarlos o consultarlos. <br>
 Sin embargo, un web scraper también debe respetar las normas éticas y
 legales del uso de la información, y no debe violar los derechos de autor o
 la privacidad de las fuentes.
