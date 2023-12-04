@@ -63,7 +63,7 @@ El programa sigue estos pasos:
 3. Busca y extrae la información deseada del código obtenido.
 4. Llama a otro servicio que guarda la información en la base de datos.
 
-![imagen del codigo]()
+![imagen del codigo](https://github.com/valentinoarballo/Data_Analysis_With_R/blob/main/images/scrapper.png)
 
 En resumen, se hace una solicitud a diferentes URL’s donde se obtiene
 toda la información del sitio, para luego buscarla en la respuesta la
@@ -89,7 +89,7 @@ Para representar los datos decidí hacer un resumen diario, es decir, que
 en lugar de hacer un análisis por cada tienda individual, trabajo con los
 precios promedio diarios.
 
-![imagen del grafico]()
+![imagen del grafico](https://github.com/valentinoarballo/Data_Analysis_With_R/blob/main/images/grafico.png)
 
 Cada punto en el gráfico representa el promedio del precio de venta del
 producto en cierto día.<br>
@@ -105,7 +105,7 @@ Para esto existe un test conocido como test de Pearson, donde el
 resultado puede variar entre 0 y 1, mientras más cerca de 1 mejor, así
 que lo ideal sería al menos obtener más de 0.7 o 0.75
 
-![imagen del test de pearson]()
+![imagen del test de pearson](https://github.com/valentinoarballo/Data_Analysis_With_R/blob/main/images/pearson.png)
 
 Viendo los resultados nos damos cuenta que si hay correlación, además
 considerablemente mejor de lo que esperaba, estos resultados nos
@@ -116,7 +116,7 @@ En mi caso, teniendo en cuenta que tenía los datos de los últimos 31
 días decidí predecir los próximos 31 días, los resultados se ven
 representados de la siguiente manera.
 
-![imagen de la prediccion]()
+![imagen de la prediccion](https://github.com/valentinoarballo/Data_Analysis_With_R/blob/main/images/prediccion.png)
 
 ¿Pero cómo podemos asegurarnos por completo de que realmente está
 siendo preciso el modelo? Si no confiamos en el test de Pearson,
@@ -156,7 +156,7 @@ cambio de ese dia, esto me permitió agarrar el precio promedio del día y
 dividirlo por la tasa de conversión, entonces así pude obtener el precio
 en euro oficial diario de cada producto.
 
-![imagen del grafico en euros]()
+![imagen del grafico en euros](https://github.com/valentinoarballo/Data_Analysis_With_R/blob/main/images/graficoeur.png)
 
 
 Si bien el euro oficial no era la moneda que tenía en mente al decidir
@@ -167,7 +167,7 @@ un poco más precisas, y si fuera en dólar blue será aún más precisa.<br>
 Así es como se ve la predicción pero con el cambio a euros como
 moneda de análisis
 
-![imagen del grafico de prediccion en euros]()
+![imagen del grafico de prediccion en euros](https://github.com/valentinoarballo/Data_Analysis_With_R/blob/main/images/prediccioneru.png)
 
 
 # Conclusión
