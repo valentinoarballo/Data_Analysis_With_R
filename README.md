@@ -68,12 +68,12 @@ El programa sigue estos pasos:
 En resumen, se hace una solicitud a diferentes URL’s donde se obtiene
 toda la información del sitio, para luego buscarla en la respuesta la
 información que me interesa y agregarla a una base de datos, que luego
-consumo desde R.
+consumo desde R.<br>
 La mejor parte del web scraper es que formatea la información para que
 siempre tenga la misma estructura, lo que me permite hacer el análisis
 sobre en este caso los procesadores i5 de décima generación, o cambiar
 unas cosas y que busque informacion sobre algun procesador ryzen, o
-memorias ram, o placas de video.
+memorias ram, o placas de video.<br>
 Para facilitar su reuso, cree una funcionalidad adicional que actúa como
 “buscador” donde le paso el nombre de lo que estoy interesado en analizar
 cómo por ejemplo, en la situación analizada, donde busco; “intel core i5
@@ -92,7 +92,7 @@ precios promedio diarios.
 ![imagen del grafico]()
 
 Cada punto en el gráfico representa el promedio del precio de venta del
-producto en cierto día.
+producto en cierto día.<br>
 El gráfico nos permite identificar a simple vista que el precio no dejo de
 subir en el último mes y no parece que se vaya a bajar, de hecho ese es
 el próximo punto.
@@ -100,7 +100,7 @@ el próximo punto.
 ## Como se ve el futuro
 Para poder hacer una predicción, antes tenemos que ver si hay
 correlación entre los datos analizados, es decir, ver si hay una variable
-dependiendo de la otra.
+dependiendo de la otra.<br>
 Para esto existe un test conocido como test de Pearson, donde el
 resultado puede variar entre 0 y 1, mientras más cerca de 1 mejor, así
 que lo ideal sería al menos obtener más de 0.7 o 0.75
@@ -111,7 +111,7 @@ Viendo los resultados nos damos cuenta que si hay correlación, además
 considerablemente mejor de lo que esperaba, estos resultados nos
 indican que los precios van a continuar subiendo con el paso del tiempo.
 Sabiendo esto, podemos hacer una predicción con bastante seguridad
-de que va a estar bastante acertada.
+de que va a estar bastante acertada.<br>
 En mi caso, teniendo en cuenta que tenía los datos de los últimos 31
 días decidí predecir los próximos 31 días, los resultados se ven
 representados de la siguiente manera.
@@ -130,7 +130,7 @@ los datos, es simplemente borrar unos registros de los datos actuales e
 intentar predecirlos, si tengo un registro diario que llega hasta el 25 de
 octubre, borrar intencionalmente unos 5 días de mi base de datos y ver
 cómo se desempeña el modelo de predicción comparando sus
-predicciones con mis datos.
+predicciones con mis datos.<br>
 De esta forma obtuve que tenía un margen de error de ~30.000 sobre
 un producto de 330.000, fallo por un 9.09%, un muy buen resultado
 teniendo en cuenta la limitación temporal del modelo y la volatilidad de
@@ -163,7 +163,7 @@ Si bien el euro oficial no era la moneda que tenía en mente al decidir
 hacer esta parte del proyecto, me trajo un cambio positivo al modelo, ya
 que subió el nivel de correlación, un poco, pero mejoró, paso de
 0.8919189 a 0.9003369 por lo que ahora debería hacer las predicciones
-un poco más precisas, y si fuera en dólar blue será aún más precisa.
+un poco más precisas, y si fuera en dólar blue será aún más precisa.<br>
 Así es como se ve la predicción pero con el cambio a euros como
 moneda de análisis
 
@@ -177,17 +177,17 @@ muestra una tendencia alcista correlacionada con el paso del tiempo y la
 devaluación de la moneda. Este fenómeno se ha observado a través de
 un proceso de recopilación de datos utilizando un servicio propio de web
 scraping, que me dejo obtener esta información actualizada y precisa
-de diferentes tiendas virtuales.
+de diferentes tiendas virtuales.<br>
 Hemos aplicado un modelo de predicción lineal para estimar el precio
 futuro de los productos, validando su precisión con un margen de error
 del 9.09%. Aunque este margen puede parecer significativo, es
 importante destacar que la predicción de precios en un mercado tan
 volátil y afectado por factores externos es una tarea compleja y tener un
-margen de error menor al 10% es un muy buen resultado.
+margen de error menor al 10% es un muy buen resultado.<br>
 Además, hemos descubierto que el cambio a una moneda más estable,
 como el euro, puede mejorar la precisión del modelo. Esto significa que
 la estabilidad de la moneda en la que se haga el análisis puede tener un
-impacto en la precisión de las predicciones de precios futuros.
+impacto en la precisión de las predicciones de precios futuros.<br>
 Este análisis no sólo proporciona una visión valiosa para los
 consumidores y los minoristas en Argentina, sino que también destaca
 la importancia del análisis de datos para entender y predecir las
