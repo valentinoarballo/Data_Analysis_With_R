@@ -3,7 +3,7 @@
 
 En este documento se presenta el resultado de un análisis predictivo de
 los precios de diferentes componentes tecnológicos en varias tiendas
-virtuales de Argentina.
+virtuales de Argentina. <br>
 El objetivo de este análisis es analizar el comportamiento de los precios
 de un mismo producto en distintas tiendas de hardware argentinas y
 lograr hacer una predicción de a dónde se dirige el mercado tecnológico
